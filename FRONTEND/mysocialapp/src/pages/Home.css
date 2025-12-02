@@ -1,0 +1,33 @@
+@media (min-width: 992px) {
+
+    .left-sidebar,
+    .right-sidebar {
+        position: sticky;
+        top: 80px;
+        height: fit-content;
+    }
+}
+/* Only Home should start lower under navbar */
+.home-page-layout {
+  margin-top: 80px !important;
+}
+
+/* Left + right sidebar stay aligned with feed */
+.home-page-layout .left-sidebar,
+.home-page-layout .right-sidebar {
+  position: sticky !important;
+  top: 120px;
+}
+/* Fix bootstrap overflow issue */
+.no-scroll-parent {
+  overflow: visible !important;
+}
+
+/* Enable sticky sidebar */
+.left-sidebar,
+.right-sidebar {
+  position: sticky !important;
+  top: 110px !important;
+  height: fit-content;
+  z-index: 10;
+}

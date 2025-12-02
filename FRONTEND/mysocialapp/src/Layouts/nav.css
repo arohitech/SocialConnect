@@ -1,0 +1,50 @@
+@media (max-width: 400px) {
+    #logoicon {
+        font-size: 20px !important;
+    }
+
+    #logotext {
+        font-size: 18px !important;
+    }
+
+    .nav-item i {
+        font-size: 20px !important;
+    }
+
+    .nav-item div {
+        font-size: 10px !important;
+    }
+
+    .navbar-brand span {
+        font-size: 18px !important;
+    }
+
+    h5.mb-0 {
+        font-size: 14px !important;
+    }
+
+    .fas {
+        font-size: 20px !important;
+    }
+}
+
+/* Ensure center icons always align horizontally */
+
+
+/* Smaller tablets fix (400px–992px) */
+@media (min-width: 351px) and (max-width: 991px) {
+    .nav-center {
+        flex-wrap: nowrap;
+        width: 100%;
+        justify-content: center !important;
+        margin-top: 10px;
+    }
+
+    .nav-item i {
+        font-size: 24px;
+    }
+
+    .nav-item div {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>create post</h1>
+    <form action="http://localhost:5000/post/create" method="post" enctype="multipart/form-data">
+        <label>upload image: </label>
+        <input type="file" name="media"><br><br>
+
+        <label>token: </label>
+        <input type="text" name="token"><br><br>
+        
+        <label>body: </label>
+        <textarea type ="text" name="body"></textarea><br><br>
+        <button>submit</button>
+
+    </form>
+     <form action="http://localhost:5000/upload" method="post" enctype="multipart/form-data">
+        <label>upload profileimage: </label>
+        <input type="file" name="profilePicture"><br><br>
+
+        <label>token: </label>
+        <input type="text" name="token"><br><br>
+     
+        <button>submit</button>
+
+    </form>
+    
+</body>
+</html>

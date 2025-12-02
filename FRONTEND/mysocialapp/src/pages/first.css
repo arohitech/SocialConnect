@@ -1,0 +1,29 @@
+.gradient-btn {
+  background: linear-gradient(45deg, #ff6ec4, #7873f5); /* Pink to Purple */
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.animated-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: linear-gradient(45deg, #0e0707); /* starting lighter black */
+  animation: blackShade 2s infinite alternate;
+}
+
+@keyframes blackShade {
+  0% {
+    color: #757373; /* light black */
+  }
+  50% {
+    color: #272626; /* medium black */
+  }
+  100% {
+    color: #111; /* dark black */
+  }
+}
