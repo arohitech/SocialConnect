@@ -19,7 +19,7 @@ const Profile = () => {
   const checkStatus = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/checkconnectionstatus/${id}`,
+        `https://social-5req.onrender.com/checkconnectionstatus/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -36,7 +36,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/getprofile/${id}`);
+        const res = await axios.get(`https://social-5req.onrender.com/getprofile/${id}`);
         setUserProfile(res.data);
       } catch (err) {
         console.log(err);
@@ -54,7 +54,7 @@ const Profile = () => {
   const sendRequest = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/sendconnectionrequest",
+        "https://social-5req.onrender.com/sendconnectionrequest",
         { connectionId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -72,7 +72,7 @@ const Profile = () => {
   const acceptRequest = async () => {
     try {
       await axios.put(
-        "http://localhost:5000/acceptrequest",
+        "https://social-5req.onrender.com/acceptrequest",
         {
           requestId: requestId,
           action_type: "accept"
@@ -96,7 +96,7 @@ const Profile = () => {
   const rejectRequest = async () => {
     try {
       await axios.delete(
-        "http://localhost:5000/rejectrequest",
+        "https://social-5req.onrender.com/rejectrequest",
         {
           headers: {
             Authorization: `Bearer ${token}`,

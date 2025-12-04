@@ -16,7 +16,7 @@ const Myconnections = () => {
       try {
         const token = user?.token;
 
-        const res = await axios.get("http://localhost:5000/myconnections", {
+        const res = await axios.get("https://social-5req.onrender.com/myconnections", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

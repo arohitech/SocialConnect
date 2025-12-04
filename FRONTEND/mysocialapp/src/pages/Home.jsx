@@ -24,7 +24,7 @@ const Home = () => {
       console.log(token);
 
       try {
-        const res = await axios.get("http://localhost:5000/getuserprofile", {
+        const res = await axios.get("https://social-5req.onrender.com/getuserprofile", {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -51,7 +51,7 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/post/getallposts", {
+        const res = await axios.get("https://social-5req.onrender.com/post/getallposts", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -75,7 +75,7 @@ const Home = () => {
 
 
       const res = await axios.delete(
-        "http://localhost:5000/post/delete",
+        "https://social-5req.onrender.com/post/delete",
         {
           headers: {
             Authorization: `Bearer ${token}`,

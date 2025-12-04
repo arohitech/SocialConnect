@@ -13,7 +13,7 @@ const Notifications = () => {
     const loadNotifications = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/getnotifications",
+          "https://social-5req.onrender.com/getnotifications",
           {
             headers: {
               Authorization: `Bearer ${token}`,  // ⭐ CORRECT TOKEN

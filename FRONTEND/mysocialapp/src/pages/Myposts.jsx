@@ -13,7 +13,7 @@ const Myposts = () => {
       console.log(token);
 
       try {
-        const res = await axios.get("http://localhost:5000/post/getmyposts", {
+        const res = await axios.get("https://social-5req.onrender.com/post/getmyposts", {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -42,7 +42,7 @@ const Myposts = () => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
 
     try {
-      await axios.delete("http://localhost:5000/post/delete", {
+      await axios.delete("https://social-5req.onrender.com/post/delete", {
         headers: { Authorization: `Bearer ${token}` },
         data: { postId },
       });
@@ -81,7 +81,7 @@ const Myposts = () => {
                 <img
                   src={
                     user?.profilePicture ||
-                    "http://localhost:5000/public/default_profilepic.jpg"
+                    "https://social-5req.onrender.com/public/default_profilepic.jpg"
                   }
                   alt="profile"
                   className="rounded-circle me-3"

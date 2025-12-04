@@ -20,7 +20,7 @@ const MyProfile = () => {
       console.log(token);
 
       try {
-        const res = await axios.get("http://localhost:5000/getuserprofile", {
+        const res = await axios.get("https://social-5req.onrender.com/getuserprofile", {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -56,7 +56,7 @@ const MyProfile = () => {
 
     const token = user?.token;
     try {
-      const res = await axios.post("http://localhost:5000/upload",
+      const res = await axios.post("https://social-5req.onrender.com/upload",
         formData,
         {
           headers: {

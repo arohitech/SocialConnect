@@ -17,7 +17,7 @@ const AddComment = ({ postId, increaseCommentCount, decreaseCommentCount }) => {
     const fetchComments = async () => {
         try {
             const res = await axios.get(
-                `http://localhost:5000/comment/getpostcomments/${postId}`,
+                `https://social-5req.onrender.com/comment/getpostcomments/${postId}`,
                 {
                     headers: { Authorization: `Bearer ${token}` }
                 }
@@ -34,7 +34,7 @@ const AddComment = ({ postId, increaseCommentCount, decreaseCommentCount }) => {
 
         try {
             const res = await axios.post(
-                "http://localhost:5000/comment/add",
+                "https://social-5req.onrender.com/comment/add",
                 {
                     postId,
                     body: newComment
@@ -58,7 +58,7 @@ const AddComment = ({ postId, increaseCommentCount, decreaseCommentCount }) => {
 
         try {
             const res = await axios.delete(
-                "http://localhost:5000/comment/delete",
+                "https://social-5req.onrender.com/comment/delete",
                 {
                     data: { commentId },   // ✔ body here
                     headers: { Authorization: `Bearer ${token}` }  // ✔ headers here

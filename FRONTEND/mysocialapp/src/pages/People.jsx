@@ -10,7 +10,7 @@ const AllUsers = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/getallusers");
+                const res = await axios.get("https://social-5req.onrender.com/getallusers");
                 setUsers(res.data); // res.data MUST be an array
             } catch (error) {
                 console.log(error);

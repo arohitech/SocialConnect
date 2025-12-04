@@ -37,7 +37,7 @@ const Addpost = () => {
             }
 
             const res = await axios.post(
-                "http://localhost:5000/post/create",
+                "https://social-5req.onrender.com/post/create",
                 fd,
                 {
                     headers: {

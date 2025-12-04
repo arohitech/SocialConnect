@@ -12,7 +12,7 @@ const Navbar = () => {
         const loadNotifications = async () => {
             try {
                 const token = user?.token;
-                const res = await axios.get("http://localhost:5000/getnotifications", {
+                const res = await axios.get("https://social-5req.onrender.com/getnotifications", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

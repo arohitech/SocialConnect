@@ -26,7 +26,7 @@ const EditProfile = () => {
       const token = user?.token || localStorage.getItem("cryptoToken");
 
       try {
-        const res = await axios.get("http://localhost:5000/getuserprofile", {
+        const res = await axios.get("https://social-5req.onrender.com/getuserprofile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -110,7 +110,7 @@ const EditProfile = () => {
 
 
       await axios.put(
-        "http://localhost:5000/updateprofiledata",
+        "https://social-5req.onrender.com/updateprofiledata",
         {
           name: profile.name,
           title: profile.title,

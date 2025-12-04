@@ -31,7 +31,7 @@ const Signup = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/register",
+                "https://social-5req.onrender.com/register",
                 formData
             );
 

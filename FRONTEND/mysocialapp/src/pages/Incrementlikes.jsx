@@ -7,7 +7,7 @@ const Incrementlikes = async(postId , posts , setPosts) => {
         const token = user?.token;
 
         const res = await axios.post(
-            "http://localhost:5000/post/addlikes",
+            "https://social-5req.onrender.com/post/addlikes",
             { postId },
             {
                 headers: {
