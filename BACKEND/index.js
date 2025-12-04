@@ -1,33 +1,34 @@
 
-const mongoose = require('mongoose');
-const express = require('express');
-require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
+const path = require("path");
+
+// Routes
 const Userroute = require('./Routes/Usersroute.js');
 const Postroute = require('./Routes/Postsroute.js');
 const Commentroute = require('./Routes/commentroute.js');
-const path = require("path");
- // Load .env variables
 
 const app = express();
 
 // Middlewares
 app.use(cors({
-  origin:"*",
-  methods:["GET","POST","PUT","DELETE"],
-  allowedHeaders:["Content-Type","Authorization"],
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use("/public", express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({extended:true}));
-app.use('/uploads',express.static("uploads"));
-
+app.use("/uploads", express.static("uploads"));
 
 app.use("/", Userroute);
 app.use("/post", Postroute);
 app.use("/comment", Commentroute);
 
+// MongoDB Connection
 mongoose
   .connect(process.env.DB_URL, {
     useNewUrlParser: true,
@@ -36,17 +37,16 @@ mongoose
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.log("❌ MongoDB connection error:", err));
 
-// Test Route
-app.get("/", (req, res) => {
-  res.send("Server is running...");
+// Serve Frontend (VERY IMPORTANT FOR RENDER)
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-// Import routes here if needed
-// import authRoutes from "./routes/auth.js";
-// app.use("/api/auth", authRoutes);
+// Server Listen (MUST USE RENDER PORT)
+const PORT = process.env.PORT || 5000;
 
-// Server Listen
-const PORT =  5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
