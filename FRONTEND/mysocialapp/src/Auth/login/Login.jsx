@@ -30,7 +30,7 @@ const Login = () => {
     setFlash({ message: "", type: "" });
 
     try {
-      const response = await axios.post("http://localhost:5000/login", formData);
+      const response = await axios.post("https://social-5req.onrender.com/login", formData);
 
       // Backend should return { token: "crypto-token", user: {...}, message: "Login successful" }
       if (response.data.token) {
